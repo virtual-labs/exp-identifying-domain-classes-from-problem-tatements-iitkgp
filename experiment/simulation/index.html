@@ -1,13 +1,495 @@
+<!--Redeveloped
+Lab: Software Engineering
+Exp:Identifying Domain Classes from the Problem Statementss
+File Name: index.html
+Author: Prakriti Dhang -->
+
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Add CSS at the head of HTML file -->
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!--link rel="styleshee" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"-->
+    <link rel="stylesheet" href="./css/css/fontawesome.css">
+    <link rel="stylesheet" href="./css/css/all.min.css">
+    
+   
+
+
+
+
+
 </head>
 <body>
-		<!-- Your code goes here-->
+    <!-- <header id="header">
+        <div class="container p-3">
+          <div class="card">
+          <div class="row">
+            <div class="col-md-2">
+            <img src="images/vlabs-logo.png" class=" rounded img-fluid" alt="vlabs-logo" >
+          </div>
+          <div class="col-md-8 p-4">
+            <p class="h2 fw-bold text-primary text-center"> Virtual Lab IIT Kharagpur</p>
+          </div>
+          <div class="col-md-2">
+            <img src="images/iitkgp-logo.png" class=" rounded img-fluid" alt="iitkgplogo" >
+          </div>
+          </div>
+        </div>
+        </div>
+      </header>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+      <div class="container p-2">
+        <hr>
+        <p class="h3 fw-bold fst-italic text-center" style="color: #000283;"> Identifying Domain Classes from the Problem Statements</p>
+        <hr>
+    </div> -->
+
+    <div class="container mt-2 p-4">
+		
+        <div class="d-flex flex-column justify-content-center mb-3 ">  
+            <div class="row">
+                <div class="col-md-4">
+                   <p class="fs-5 fw-bold" style="color: brown;">From the following problem statement, identify the domain classes</p>
+                   <p style="text-align: justify;"> An automated teller machine (ATM) lets customers to withdraw cash anytime from 
+                    anywhere without requiring involvement of any banking clerk or representative. Customer must insert his ATM card 
+                    into he machine and authenticate himself by typing in his personal identification number (PIN). He cannot avail 
+                    any of the facilities if the PIN entered is wrong. Authenticated customers can also change their PIN. 
+                    They can deposit cash to their account with the bank. Also they can transfer funds to any other account. 
+                    The ATM also provides options to the user to pay electricity or phone bill. Everyday morning the stock of cash 
+                    in the ATM machine is replenished by a representative from the bank. 
+                    Also, if the machine stops working, then it is fixed by a maintenance guy.
+                   </p>
+                   
+                </div>
+               
+                <div class="col-md-8">
+                  
+                  <div class="p-2 border-start" >
+                    <div class="card-body">
+                    <!--div class="main"-->
+                    <div  class="card card-body border border-1 border-info" id="h1">
+                     
+                        <h5 id="head1" class="card-title fs-5 fw-bold fst-italic border border-3 border-primary rounded-3 p-2" style="text-align: center; background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">Identifying Domain Classes from the Problem Statements</h5>
+                      </div>     
+                      <div class="d-flex flex-column">
+                       
+                        <div class="card card-body border border-2 border-primary p-1  gap-3  ">
+                          
+                         
+                          <div class="d-grid gap-2 d-flex flex-row ">
+                            <p class="fs-5 fw-bold " style="text-align:left">Step</p>
+                            <button id="step0" type="button" class="btn border border-2 border-primary rounded-5 " style="display:block; background-color:#ccffff;" >
+                          <i class="fa-solid fa-square-1" >0</i></button>
+                          <button id="step1" type="button" class="btn border border-2 border-primary rounded-5" style="display:none; background-color:#ccffff;" >
+                            <i class="fa-solid fa-square-2" >1</i></button>
+                          <button id="step2" type="button" class="btn border border-2 border-primary rounded-5" style="display:none; background-color:#ccffff; ">
+                              <i class="fa-solid fa-square-3" >2</i></button>
+                          <button id="step3" type="button" class="btn  border border-2 border-primary rounded-5" style="display:none; background-color:#ccffff;" >
+                                <i class="fa-solid fa-square-4" >3</i></button>
+                          <button id="step4" type="button" class="btn border border-2 border-primary rounded-5" style="display:none; background-color:#ccffff;" >
+                                  <i class="fa-solid fa-square-5" >4</i></button>
+                                </div>
+                        </div>
+
+                        <div id="p1" class=" card card-body border border-2 border-primary p-2" style="display:none;">
+                          <p class="fs-5" style="display:block;">We will follow the steps given below to identify <b>domain classes</b> from a given problem statement</p>
+                        <ul class="fs-5 list-group-numbered">
+                          <li id="l1" class="list-group-item" style="display:none;">Mark the nouns and noun phrases -- this gives
+                            a list of all potential objects.
+                          </li>
+                          <li id="l2" class="list-group-item" style="display:none;"> Categorize the above discovered objects</li>
+                          <li id="l3" class="list-group-item" style="display:none;">Group the objects based on their common attributes</li>
+                          <li id="l4" class="list-group-item" style="display:none;">Give name to each such group -- they form the classes</li>
+                          </ul>
+                          <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                          <button id="nextbtn1" type="button" class="btn btn-primary" onclick="gonextp2()" disabled style="display:block;">
+                            <i class="fas fa-chevron-right fa-lg"></i></button>
+                            </div>
+                        </div>
+
+                        <div id="p2" class=" card card-body border border-2 border-primary p-2 " style="display:none;">
+                          
+                          <p class="fs-5" style="text-align: justify;">An <mark id="m1">automated teller machine</mark> (ATM) lets <mark id="m2">customers</mark> to withdraw <mark id="m3">cash</mark> anytime from 
+                          anywhere without requiring involvement of any <mark id="m4">banking clerk</mark> or <mark id="m5">representative</mark>. <mark id="m6">Customer</mark> must insert his <mark id="m7">ATM card</mark> 
+                          into he <mark id="m8">machine</mark> and authenticate himself by typing in his personal identification number (<mark id="m9">PIN</mark>). He cannot avail 
+                          any of the facilities if the PIN entered is wrong. Authenticated customers can also change their PIN. 
+                          They can deposit cash to their <mark id="m10">account</mark> with the <mark id="m11">bank</mark>. Also they can transfer funds to any other account. 
+                          The ATM also provides options to the user to pay electricity or phone bill. <mark id="m12">Everyday</mark> <mark id="m13"> morning</mark> the stock of cash 
+                          in the ATM machine is replenished by a representative from the bank. 
+                          Also, if the machine stops working, then it is fixed by a <mark id="m14">maintenance guy</mark>.</p>
+                          <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                          <!--button id="backbtn2" type="button" class="btn btn-primary" onclick="gobackp1()" style="display:block;">
+                            <i class="fas fa-chevron-left fa-lg"></i></button-->
+                            <button id="nextbtn2" type="button" class="btn btn-primary" onclick="gonextp3()" style="display:block;">
+                              <i class="fas fa-chevron-right fa-lg"></i></button>
+                              </div>
+                        </div>
+                        
+
+
+
+                        <div id="p3" class=" card card-body border border-2 border-primary p-2 " style="display:none;">
+                          <p class="fs-5" style="text-align: justify;">The classification into different categories will be made as per the list given by 
+                          Ross (see in theory section).
+                        </p>
+                        <div id="p31" style="display:none;">
+<p class="fs-5">  List of objects identified:</p>
+<ul class=" list-group px-3 list-group-horizontal-sm list-group-horizontal-md list-group-horizontal-lg  ">
+  <li id="li1" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">Automated teller machine</li>
+  <li id="li2" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">Customers</li>
+  <li id="li3" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">Cash</li>
+  <li id="li4" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">Banking</li>
+  </ul>
+  <ul  class=" list-group px-3 list-group-horizontal-sm list-group-horizontal-md list-group-horizontal-lg ">
+  <li id="li5" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">Representative</li>
+  <li id="li6" class=" fs-5 list-group-item border border-1 rounded-3" style="display: none;">ATM Card</li>
+  <li id="li7" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Machine</li>
+  <li id="li8" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;" >PIN</li>
+  <li id="li9" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Account</li>
+</ul>
+<ul class=" list-group px-3 list-group-horizontal-sm list-group-horizontal-md list-group-horizontal-lg ">
+ 
+  
+  <li id="li10" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Bank</li>
+  <li id="li11" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Everyday</li>
+  <li id="li12" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Morning</li>
+  <li id="li13" class="fs-5 list-group-item border border-1 rounded-3" style="display: none;">Maintenance guy</li>
+</ul>
+
+  </div>
+
+
+<div id="p32" style="display:block;">
+  <div class="row">
+    <div id="people" class="col-md-4" style="display:none;">
+     <p class="fs-4 fw-bold text-danger">People</p> 
+      <ul class="list-group border border-2 border-danger  text-bg-danger bg-opacity-25 p-2">
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Customer</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Maintenance guy</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Representaive</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Banking clerk</li>
+      </ul>
+    </div>
+    <div id="things" class="col-md-4" style="display:none;"><p class="fs-4 fw-bold text-info">Things</p> 
+      <ul class="list-group border border-2 border-primary text-bg-info bg-opacity-50 p-2">
+        <li class="fs-5 list-group-item  border border-0 rounded-3 bg-transparent">Automated teller machine</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">ATM card</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Machine</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Cash</li>
+      </ul>
+    </div>
+    <div id="org" class="col-md-4" style="display:none;"> <p class="fs-4 fw-bold text-warning">Organization</p> 
+      <ul class="list-group  border border-2 border-danger bg-warning bg-opacity-50 p-2">
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Bank</li>
+       
+      </ul></div>
+  </div>
+  <br>
+  <div class="row">
+    <div id="evnt" class="col-md-4" style="display:none;"><p class="fs-4 fw-bold text-primary">Events</p> 
+      <ul class="list-group border border-2 border-success p-2 bg-success text-dark bg-opacity-25">
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Everyday</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Morning</li>
+ 
+      </ul></div>
+    <div id="concpt" class="col-md-4" style="display:none;"><p class="fs-4 fw-bold text-success">Concepts</p> 
+      <ul class="list-group border border-2 border-primary bg-danger bg-opacity-10 p-2">
+        <li class="fs-5 list-group-item border border-0 rounded-3 bg-transparent">Account</li>
+        <li class="fs-5 list-group-item border border-0 rounded-3  bg-transparent">PIN</li>
+      
+      </ul></div>
+
+  </div>
+  <br>
+  <div id="identdobj" class="card card-body border border-1 border-primary" style="display:none; background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);"">
+    <p class="fs-5"> All the porential objects have been categorized.</p>
+  </div>
+</div>
+<div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+  <button id="nextbtn32" type="button" class="btn btn-primary" onclick="gonextp32()" style="display:block;">
+    <i class="fas fa-chevron-right fa-lg"></i></button></div>
+<div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+  <!--button id="backbtn3" type="button" class="btn btn-primary" onclick="gobackp2()" style="display:block;">
+    <i class="fas fa-chevron-left fa-lg"></i></button-->
+    <button id="nextbtn3" type="button" class="btn btn-primary" onclick="gonextp4()" style="display:block;">
+      <i class="fas fa-chevron-right fa-lg"></i></button>
+      </div>
+
+                        </div>
+
+
+
+                        <div id="p4" class="card card-body border border-2 border-primary" style="display: none;">
+                          
+                          <div id="p41" class="card card-body border border-2 border-danger bg-danger bg-opacity-25" style="display: none;">
+                            <h3 class="text-center">People</h3>
+                            <div class="row">
+                            
+                            <div class="col-md-8">
+                             
+                              <p class="fs-5">Customers</p>
+                            <ul>
+                              <li>Human</li>
+                              <li>Uses the system to get some service</li>
+                            </ul>
+                            <p class="fs-5">Banking clerk</p>
+                            <p class="fs-5">Representaive</p>
+                            <p class="fs-5">Maintenance guy</p>
+                            <ul>
+                              <li>Human</li>
+                              <li>Works for the banking organization</li>
+                            </ul>
+
+                          </div>
+                            <div class="col-md-4" >
+                              <div class="card card-body border border-1 border-primary" style=" background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                <p class="fs-5"> Class: Customer</p>
+                              </div>
+                              <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                <p class="fs-5"> Class: Employee</p>
+                              </div>
+                            </div>
+                           
+                          </div>
+                          <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                            <button id="nextbtn42" type="button" class="btn" onclick="gonextp42()" style="display:block;">
+                              <i class="fas fa-chevron-right fa-lg"></i></button></div>
+                          
+                          </div>
+                          <div id="p42" class="card card-body border border-2 border-primary bg-info bg-opacity-50" style="display: none;">
+                            <h3 class="text-center">Things</h3>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="fs-5">Automated teller machine</p>
+                                <p class="fs-5">Machine</p>
+                                <ul>
+                                  <li>Machines either operated manually or automatically</li>
+                                </ul>
+                                <p class="fs-5">ATM card</p>
+                                <ul>
+                                  <li>Can be used for making payments instead of cash</li>
+                                </ul>
+                              
+                                <p class="fs-5">Cash</p>
+                                <ul>
+                                  <li>Printed money</li>
+                                 
+                                </ul>
+    
+
+                              </div>
+                              <div class="col-md-4">
+
+                                <div class="card card-body border border-1 border-primary" style=" background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: Machine, ATM Machine</p>
+                                </div>
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: ATM Card</p>
+                                </div>
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: Cash</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                              <button id="nextbtn43" type="button" class="btn" onclick="gonextp43()" style="display:block;">
+                                <i class="fas fa-chevron-right fa-lg"></i></button></div>
+                          </div>
+                          <div id="p43" class="card card-body border border-2 border-danger bg-warning bg-opacity-50" style="display: none;">
+                            <h3 class="text-center">Organization</h3>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="fs-5">Bank</p>
+                                <ul class="fs-6">
+                                  <li>Has name, branch</li>
+                                  <li>Managed by manager</li>
+                                  <li>Keeps deposit of money, lends money</li>
+                                </ul>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: Bank</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                              <button id="nextbtn44" type="button" class="btn" onclick="gonextp44()" style="display:block;">
+                                <i class="fas fa-chevron-right fa-lg"></i></button></div>
+                          </div>
+                          <div id="p44" class="card card-body border border-2 border-success bg-success bg-opacity-25" style="display: none;">
+                            <h3 class="text-center">Event</h3>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="fs-5">Everyday</p>
+                                <p class="fs-5">Morning</p>
+                                <ul>
+                                  <li>Denotes specific time or time duration</li>
+                                
+                                </ul>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: Time</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                              <button id="nextbtn45" type="button" class="btn" onclick="gonextp45()" style="display:block;">
+                                <i class="fas fa-chevron-right fa-lg"></i></button></div>
+                          </div>
+                          <div id="p45" class="card card-body border border-2 border-danger bg-danger bg-opacity-10" style="display: none;">
+                            <h3 class="text-center">Concepts</h3>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <p class="fs-5">PIN</p>
+                                <ul>
+                                  <li>A number for identification</li>
+                                </ul>
+                                <p class="fs-5">Account</p>
+                                <ul>
+                                  <li>Has an account number, holders name</li>
+                                  <li>Has some finite balance at any given time</li>
+                                
+                                </ul>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: PIN</p>
+                                </div>
+                                <div class="card card-body border border-1 border-primary" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                                  <p class="fs-5"> Class: Account</p>
+                                </div>
+                              </div>
+                            </div>
+                          
+                          </div>
+                         
+                         
+                         
+                         
+                         
+                         
+                          <div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+                            <!--button id="backbtn4" type="button" class="btn btn-primary" onclick="gobackp3()" style="display:block;">
+                              <i class="fas fa-chevron-left fa-lg"></i></button-->
+                              <button id="nextbtn4" type="button" class="show btn btn-primary" onclick="gonextp5()" style="display:block;">
+                                <i class="fas fa-chevron-right fa-lg"></i></button>
+                                </div>
+                          </div>
+
+
+
+<div id="p5" class="card card-body border border-2 border-primary" style="display: none;">
+<p class="fs-5">All possible groups have been formed. 
+  The top level classes formed are shown next.</p>
+<div class="row">
+<div class="col-md-4">
+  <ol class="fs-5">
+    <li>Customer</li>
+    <li>Employee</li>
+    <li>ATM Machine</li>
+    <li>Machine</li>
+    <li>Cash</li>
+    <li>Bank</li>
+    <li>Account</li>
+    <li>PIN</li>
+    <li>Time</li>
+  </ol>
+</div>
+<div class="col-md-8" >
+<div id="toplevel" class="card card border border-2 border-primary" style="display: none; background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+  <p class="fs-5 p-2">These are the top level classesthat we identify from the given
+  problem statement.</p>
+</div>
+
+<div id="note" class="card card border border-2 border-primary" style="display: none; background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+  <p class="fs-5 p-2">Note that there are possibly some redundant classes. Also, no relations among
+    classes have been represented.
+  </p>
+</div>
+
+</div>
+</div>               
+<div class="d-grid gap-2  d-md-flex justify-content-md-end p-2" >
+  <!--button id="backbtn5" type="button" class="btn btn-primary" onclick="gobackp4()" style="display:block;">
+    <i class="fas fa-chevron-left fa-lg"></i></button-->
+    
+      </div>       
+
+                    </div>    
+                      </div>
+                      <!--div class="row ">
+                        <div class="col-md-2">
+                          <div class="card card-body border border-2 border-primary p-1   gap-2  "> 
+                            <p class="fs-5 fw-bold" >Step</p>
+                            <button type="button" class="btn border border-4 border-primary rounded-5 " style="background-color:#ccffff;" onclick="gostep1()">
+                            <i class="fa-solid fa-square-1" >1</i></button>
+                            <button type="button" class="btn border border-4 border-primary rounded-5 " style="background-color:#ccffff;" onclick="gostep2()">
+                              <i class="fa-solid fa-square-2" >2</i></button>
+                            <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff; " onclick="gostep3()">
+                                <i class="fa-solid fa-square-3" >3</i></button>
+                            <button type="button" class="btn  border border-4 border-primary rounded-5 " style="background-color:#ccffff;" onclick="gostep4()">
+                                  <i class="fa-solid fa-square-4" >4</i></button>
+                            <button type="button" class="btn border border-4 border-primary rounded-5" style="background-color:#ccffff;" onclick="gostep5()">
+                                    <i class="fa-solid fa-square-5" >5</i></button>
+                          </div>
+                        </div>
+                        <div class="col-md-10">
+                          <div class="card card-body">
+                            <p class="fs-5" style="display:block;">We will follow the steps shown below to draw the ER diagram </p>
+                           <ol class="fs-5  list-group-numbered">
+                            <li class="list-group-item" id="s1" style="display:block;">Identify sets and their attributes</li>
+                            <li class="list-group-item" id="s2" style="display:block;">Draw the entities</li>
+                            <li class="list-group-item" id="s3" style="display:block;">Identify relationships</li>
+                            <li class="list-group-item" id="s4" style="display:block;">Draw the relationships</li>
+                            <li class="list-group-item" id="s5" style="display:block;">Identify mapping cardinalities and represent them.</li>
+                           </ol>
+                          </div>
+                        </div>
+                      </div-->
+
+
+<!--/div-->
+                    <div class="d-grid gap-2 p-2 d-md-flex justify-content-md-center border border-1 border-info" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
+                    
+                      <button id="replaybtn" type="button" class="btn btn-warning fs-5" onclick="replaybtn()" style="display:none;"> Replay 
+                        <i class="fas fa-redo"></i></button>
+                    
+                    <button id="playbtn" type="button" class="btn btn-info fs-5" onclick="playsimulation()"> Click to Play <i class="fas fa-play fa-sm "></i></button>
+                    <!--i class="fa-solid fa-play"></i-->
+                    
+                  </div>
+                </div>
+              </div>
+                </div>
+            </div>
+            <hr>
+            <a class="btn btn-success fs-4" target="_blank" href="./domainclass_index.html" role="button">Click Here to Go to Exercise Page</a>
+           
+        </div>
+            </div>
+
+           <!--  <div class="container p-1">
+              <hr>
+            <footer class="text-white text-center ">
+                <div class="text-center text-primary fs-5 "  >
+                  Copyright © 2023  IIT Kharagpur,
+                  <a class="text-primary fs-5" href="http://vlabs.iitkgp.ac.in/">Virtual Lab</a>
+                </div>
+                </footer>
+                <hr>
+                </div> -->
+
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/simulation.js"></script>
 </body>
 </html>

@@ -2,36 +2,38 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Domain Object Model is used to",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Build concept ",
+        "b": "Build the databases",
+        "c": "Construct the logical operations "
+       
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Classes contain the same type objects – here the same type meansy",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Coming from the same sources ",
+        "b": "They are of same data type ",
+        "c": " They are using the same attributes and methods"
+       
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "List of potential objects can be made from a narrative problem statement by marking the",
+      "answers": {
+        "a": "Verbs from the problem statement",
+        "b": "Adjective from the problem statement",
+        "c": "Nouns from the problem statement",
+        "d": "None of the above "
       },
+      
       "correctAnswer": "c",
       "difficulty": "beginner"
     }
