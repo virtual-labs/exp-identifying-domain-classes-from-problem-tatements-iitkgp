@@ -54,6 +54,8 @@ newLi.appendChild(newCheckLabel);*/
 var newulID;
 function addbtnt1() {
   inpt1 = document.getElementById("inp1").value;
+ //var inpt1LOwerCase = inpt1.toUpperCase();
+
 
   newLi = document.createElement("li");
   newLi.setAttribute("data-value", inpt1);
@@ -91,13 +93,28 @@ function addbtnt1() {
     {
         alert("Give alphabates and whitespace only");
     }*/
-  else
-  /*((inpt1 == "Mr. Bose")||(inpt1 == "Mr. Roy"))
-  ||(inpt1 == "Cabs")||(inpt1 == "cabs")||(inpt1 == "cab")||(inpt1 == "boss")||(inpt1 == "agency")||(inpt1 == "drivers")||(inpt1 == "AC")||(inpt1 == "services")||(inpt1 == "Kolkata")||(inpt1 == "passenger")
-  ||(inpt1 == "booking receipt")||(inpt1 == "home")||(inpt1 == "office")||(inpt1 == "place")||(inpt1 == "landmark")||(inpt1 == "Payments")||(inpt1 == "cheque")||(inpt1 == "branch")||(inpt1 == "At Your Rish Bank")||(inpt1 == "finances")
-  ||(inpt1 == "business")||(inpt1 == "bank")||(inpt1 == "morning")||(inpt1 == "everyday")||(inpt1 == "son")||(inpt1 == "school")||(inpt1 == "persons")||(inpt1 == "locality")||(inpt1 == "plan")
-  ||(inpt1 == "Drop to school")||(inpt1 == "neighbour")) */ {
+  else {
+    /*((inpt1 == "Mr. Bose")||(inpt1 == "Mr. Roy"))
+    ||(inpt1 == "Cabs")||(inpt1 == "cabs")||(inpt1 == "cab")||(inpt1 == "boss")||(inpt1 == "agency")||(inpt1 == "drivers")||(inpt1 == "AC")||(inpt1 == "services")||(inpt1 == "Kolkata")||(inpt1 == "passenger")
+    ||(inpt1 == "booking receipt")||(inpt1 == "home")||(inpt1 == "office")||(inpt1 == "place")||(inpt1 == "landmark")||(inpt1 == "Payments")||(inpt1 == "cheque")||(inpt1 == "branch")||(inpt1 == "At Your Rish Bank")||(inpt1 == "finances")
+    ||(inpt1 == "business")||(inpt1 == "bank")||(inpt1 == "morning")||(inpt1 == "everyday")||(inpt1 == "son")||(inpt1 == "school")||(inpt1 == "persons")||(inpt1 == "locality")||(inpt1 == "plan")
+    ||(inpt1 == "Drop to school")||(inpt1 == "neighbour")) */
 
+
+    let isInserted = false;
+    const myListn = document.getElementById("potobjlist");
+    const listItemsn = myListn.getElementsByTagName("li");
+    for (let i = 0; i < listItemsn.length; i++) {
+      if( (listItemsn[i].textContent == inpt1)){
+        isInserted = true;
+        break;
+      }
+    }
+    if (isInserted) {
+      alert("You have already entered a noun by the same name.");
+      document.getElementById("inp1").value = "";
+    } else {
+     
     document.getElementById('potobjlist').appendChild(newLi);
     document.getElementById("inp1").value = "";
 
@@ -117,9 +134,9 @@ function addbtnt1() {
     let select = document.getElementById('selectobj');
     select.appendChild(newOption);
   }
-  //else{
+  
 
-
+  }
 
   //alert("Read the problem statement carefully and then insert noun or noun phrase 'exactly same' as in the problem statement");
   //}
@@ -455,7 +472,7 @@ function addbtnt7() {
   //}
   // }
 
-  
+
 
 
   if (inpt3 == "") {
@@ -467,8 +484,8 @@ function addbtnt7() {
   }
 
   else {
-    var t8attid= "t8att8"+ inpt3;
-    var t8class="t8class"+inpt3;
+    var t8attid = "t8att8" + inpt3;
+    var t8class = "t8class" + inpt3;
     var t8tr = document.createElement('tr');
     t8tr.setAttribute("id", "t8class1");
     document.getElementById('tbodytbl8').appendChild(t8tr);
@@ -483,9 +500,9 @@ function addbtnt7() {
 
     td1t8.appendChild(tdval1);
 
-    
+
     var ult8 = document.createElement("ul");
-    var ulid="t8att"+ inpt3;
+    var ulid = "t8att" + inpt3;
     ult8.setAttribute("id", ulid);
     var lit8;
     td2t8.appendChild(ult8);
@@ -500,26 +517,26 @@ function addbtnt7() {
       lit8.appendChild(newIconbtn);
       ult8.appendChild(lit8);
     })
-    document.getElementById("t8att8"+ inpt3).appendChild(ult8);
+    document.getElementById("t8att8" + inpt3).appendChild(ult8);
     //document.getElementById("t8class"+inpt3).appendChild(tdval1);
     document.getElementById('tbodytbl8').appendChild(t8tr);
 
-/**************************************** Removes duplicate class and rows *********************************************/
+    /**************************************** Removes duplicate class and rows *********************************************/
     function removeDuplicateCellValuesAndRows() {
       var table = document.getElementById('tbl8');
       var rows = table.rows;
       var uniqueValues = new Set();
       var duplicateRows = [];
-    
+
       for (var i = 1; i < rows.length; i++) {
         var row = rows[i];
         var cells = row.cells;
         var duplicateRow = true;
-    
+
         for (var j = 0; j < cells.length; j++) {
           var cell = cells[j];
           var value = cell.textContent;
-    
+
           if (uniqueValues.has(value)) {
             duplicateRow = true;
             break;
@@ -528,49 +545,49 @@ function addbtnt7() {
             uniqueValues.add(value);
           }
         }
-    
+
         if (duplicateRow) {
           duplicateRows.push(row);
         }
       }
-    
+
       for (var i = 0; i < duplicateRows.length; i++) {
         var row = duplicateRows[i];
         table.deleteRow(row.rowIndex);
       }
     }
-    
+
     removeDuplicateCellValuesAndRows();
-    
-    
+
+
 
 
     document.getElementById("ftbl7").reset();
-     
-    
-/******* Adding Classes************/
-      var t10tr = document.createElement('tr');
 
-      var td1t10 = document.createElement('td');
 
-      var tdval10 = document.createTextNode(inpt3);
+    /******* Adding Classes************/
+    var t10tr = document.createElement('tr');
 
-      t10tr.appendChild(td1t10);
-      td1t10.appendChild(tdval10);
-      document.getElementById('tbody10class').appendChild(t10tr);
-    
+    var td1t10 = document.createElement('td');
 
-  //}
+    var tdval10 = document.createTextNode(inpt3);
+
+    t10tr.appendChild(td1t10);
+    td1t10.appendChild(tdval10);
+    document.getElementById('tbody10class').appendChild(t10tr);
+
+
+    //}
 
   }
 
-  
+
 
 
 }
 
 
-  
+
 
 
 
