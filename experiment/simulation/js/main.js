@@ -346,6 +346,20 @@ function addbtnt4() {
     document.getElementById("t6attr" + dobj).appendChild(ult6);
     //document.getElementById("t6obj" + dobj).appendChild(td1);
     document.getElementById('tbodytbt6').appendChild(ntr);
+    
+    /******************* Merge ******************/
+    const lists = document.querySelectorAll('ul#'+"attri_"+ dobj);
+    const firstList = lists[0];
+
+    lists.forEach((list, index) => {
+      if (index !== 0) {
+        const listItems = list.getElementsByTagName('li');
+        for (let item of listItems) {
+          firstList.appendChild(item.cloneNode(true));
+        }
+        list.parentNode.removeChild(list); 
+      }
+    });
    
 /**************************************** Removes duplicate class and rows *********************************************/
  function removeDuplicateCellValuesAndRows6() {
@@ -547,6 +561,19 @@ function addbtnt7() {
     //document.getElementById("t8class"+inpt3).appendChild(tdval1);
     document.getElementById('tbodytbl8').appendChild(t8tr);
 
+    /******************* Merge ******************/
+    const lists = document.querySelectorAll('ul#'+"t8att" + inpt3);
+    const firstList = lists[0];
+
+    lists.forEach((list, index) => {
+      if (index !== 0) {
+        const listItems = list.getElementsByTagName('li');
+        for (let item of listItems) {
+          firstList.appendChild(item.cloneNode(true));
+        }
+        list.parentNode.removeChild(list); 
+      }
+    });
     /**************************************** Removes duplicate class and rows *********************************************/
     function removeDuplicateCellValuesAndRows() {
       var table = document.getElementById('tbl8');
