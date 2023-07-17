@@ -54,8 +54,11 @@ newLi.appendChild(newCheckLabel);*/
 var newulID;
 function addbtnt1() {
   inpt1 = document.getElementById("inp1").value;
- //var inpt1LOwerCase = inpt1.toUpperCase();
-
+ var inpt1LowerCase = inpt1.toLowerCase().replace(/\./g, '');
+ var inpt1UpperCase = inpt1.toUpperCase().replace(/\./g, '');
+// var inpt1LUCase1= inpt1.trim().toLowerCase().replace(/\./g, '');
+ //var inpt1LUCase1 = inpt1.match(/[.a-zA-Z]/g, '');
+ 
 
   newLi = document.createElement("li");
   newLi.setAttribute("data-value", inpt1);
@@ -104,11 +107,16 @@ function addbtnt1() {
     let isInserted = false;
     const myListn = document.getElementById("potobjlist");
     const listItemsn = myListn.getElementsByTagName("li");
+    //const existingIndex = Array.from(myListn.children).findIndex(item => item.textContent.trim().toLowerCase() === inpt1);
     for (let i = 0; i < listItemsn.length; i++) {
-      if( (listItemsn[i].textContent == inpt1)){
+      if( (listItemsn[i].textContent == inpt1)||(listItemsn[i].textContent == inpt1LowerCase)||(listItemsn[i].textContent == inpt1UpperCase)||(listItemsn[i].textContent.trim().toLowerCase().replace(/\./g,'') == inpt1.trim().toLowerCase().replace(/\./g,''))){
         isInserted = true;
         break;
       }
+     /*  else if(regExp.test(inpt1)){
+        isInserted = true;
+        break;
+      } */
     }
     if (isInserted) {
       alert("You have already entered a noun by the same name.");
